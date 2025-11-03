@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AR.js Chatbot (Mobile Camera)</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="./styles/chat.css" />
+    <style>html,body{margin:0;overflow:hidden;background:#000}</style>
+  </head>
+  <body>
+    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best;">
+      <a-marker preset="hiro">
+        <a-box position="0 0.5 0" depth="0.5" height="0.5" width="0.5" color="#4CC3D9"
+          animation="property: rotation; to: 0 405 0; loop: true; dur: 3000">
+        </a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <div id="log" aria-live="polite"></div>
+    <div id="chatbar">
+      <button id="mic" title="음성 입력">🎤</button>
+      <input id="msg" placeholder="AR 챗봇에게 말 걸기..." />
+      <button id="send">보내기</button>
+    </div>
+
+    <script src="./scripts/chat.js" type="module"></script>
+  </body>
+</html>
