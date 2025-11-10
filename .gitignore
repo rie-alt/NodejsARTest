@@ -1,1 +1,10 @@
 .vercel
+
+*.jar
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+.env
